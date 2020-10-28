@@ -1,0 +1,22 @@
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/test.scss' %}">
+  </head>
+  <body>
+    <form action="/your-name/" method="post">
+      <div>
+        <label for="id_first_name">First Name</label>
+        {{ form.first_name }}
+      </div>
+
+      <br>
+
+      <div>
+        <label for="id_last_name">Last Name</label>
+        {{ form.last_name }}
+      </div>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
