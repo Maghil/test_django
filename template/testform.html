@@ -4,19 +4,24 @@
     <link rel="stylesheet" href="{% static 'css/test.scss' %}">
   </head>
   <body>
-    <form action="/your-name/" method="post">
-      <div>
-        <label for="id_first_name">First Name</label>
-        {{ form.first_name }}
-      </div>
+    <div class="main">
+      <form action="main/" method="post">
+        {% csrf_token %}
+        <div>
+          <label for="id_first_name">First Name</label>
+          {{ form.first_name }}
+        </div>
 
-      <br>
+        <br>
 
-      <div>
-        <label for="id_last_name">Last Name</label>
-        {{ form.last_name }}
-      </div>
-        <input type="submit" value="Submit">
-    </form>
+        <div>
+          <label for="id_last_name">Last Name</label>
+          {{ form.last_name }}
+        </div>
+
+        <br>
+        <input type="submit" value="Submit">  
+      </form>
+    </div>
   </body>
 </html>
