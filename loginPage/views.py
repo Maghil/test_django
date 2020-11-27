@@ -5,7 +5,7 @@ from .forms import loginForm
 
 def login(request):
     form = loginForm(request.POST)
-    return render(request, 'testform.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 def home(request):
     if request.method == 'POST':
