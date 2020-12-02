@@ -1,27 +1,56 @@
-<html>
-  <head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/test.scss' %}">
-  </head>
-  <body>
-    <div class="home">
-      <form action="home/" method="post">
-        {% csrf_token %}
-        <div>
-          <label for="id_first_name">First Name</label>
-          {{ form.first_name }}
-        </div>
-
-        <br>
-
-        <div>
-          <label for="id_last_name">Last Name</label>
-          {{ form.last_name }}
-        </div>
-
-        <br>
-        <input type="submit" value="Submit">  
-      </form>
-    </div>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.scss'%}">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form " method="POST" action="../home/">
+					<span class="login100-form-title p-b-43">
+						Login to Continue
+					</span>
+					{% csrf_token %}
+					<div class="wrap-input100 login">
+						<input class="input100 logintxtclor" type="text" name="username" placeholder="Email" size="50">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 login">
+						<input class="input100 logintxtclor" type="password" name="password" placeholder="Password" size="50">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="text-right p-t-3 p-b-32">
+						<div>
+							<a href="#" class="txt1">
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+					<div class="text-center p-t-46">
+						<a href="../" class="txt1">
+							Don't Have an account?
+						</a>
+					</div>
+				</form>
+			<div class="login100-more image-import">
+				<!--=============Image block=============-->
+			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'js/main.js'%}"></script>
+</body>
 </html>
